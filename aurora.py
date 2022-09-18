@@ -57,8 +57,8 @@ def scan(x_test, y_test, w):
 
 
 def init():
-    if os.path.isfile('logo'):
-        with open('logo', 'r') as f:
+    if os.path.isfile('Imgs/logo'):
+        with open('Imgs/logo', 'r') as f:
             print(f.read())
     input("\nPress enter to start\n > ")
     allData = prep_data()
