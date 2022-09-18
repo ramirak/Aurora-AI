@@ -57,6 +57,10 @@ def scan(x_test, y_test, w):
 
 
 def init():
+    if os.path.isfile('logo'):
+        with open('logo', 'r') as f:
+            print(f.read())
+    input("\nPress enter to start\n > ")
     allData = prep_data()
     feature_indexes = [1,2,3,4]
     x = get_features(allData, feature_indexes)
