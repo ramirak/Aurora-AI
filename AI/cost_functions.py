@@ -26,12 +26,9 @@ def predict_log_reg(x_test,y_test, learned_w, threshold):
     learned_w=np.array(learned_w,dtype=float)
     
     predictions = []
-    preds = []
     for i in range(len(y_test)):
         wx = 0
         for j in range(len(learned_w)):
             wx += learned_w[j] * x_test[i][j]
-        predictions.append([sigmoid(wx),y_test[i]])   
-        preds.append(sigmoid(wx))
+        predictions.append([sigmoid(wx),y_test[i]])
     return [[math.floor(predictions[i][0]),predictions[i][1]] if predictions[i][0] < threshold else [math.ceil(predictions[i][0]),predictions[i][1]]  for i in range(len(y_test))]
-    

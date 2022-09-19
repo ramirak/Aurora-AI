@@ -30,6 +30,3 @@ def get_imported_functions(entry):
             pe_imports.append(func.name.decode('utf-8'))
     return pe_imports
 
-pe = pe_load("7zFM.exe")
-if pe:
-    print(get_dlls(pe,True)[0])
