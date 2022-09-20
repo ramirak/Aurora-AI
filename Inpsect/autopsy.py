@@ -4,22 +4,23 @@ import pefile
 def pe_load(filename):
     try:
         return pefile.PE(filename)
-    except OSError as e:
-        print(e)
-    except pefile.PEFormatError as e:
-        print("PE Format Error:" + str(e.value))
+    except:
+        return
 
 
 def get_dlls(pe, additional_info):
     dll_list = []
     pe_imports = []
-    for entry in pe.DIRECTORY_ENTRY_IMPORT:    
-        if entry.dll != None:
-            dll_list.append(entry.dll.decode())
-            if additional_info:
-                pe_imports.append(get_imported_functions(entry))
-    if additional_info:
-        return dll_list, pe_imports
+    try:
+        for entry in pe.DIRECTORY_ENTRY_IMPORT:    
+            if entry.dll != None:
+                dll_list.append(entry.dll.decode())
+                if additional_info:
+                    pe_imports.append(get_imported_functions(entry))
+        if additional_info:
+            return dll_list, pe_imports
+    except:
+        return None
     return dll_list
 
 
