@@ -28,7 +28,7 @@ def init():
                         if os.path.isfile(path):
                             scan(path, w, feature_indexes)
                         else:
-                            scan_path(path, w, feature_indexes)
+                            scan_path(path + "/", w, feature_indexes)
             choice = "-1"
 
 
@@ -37,9 +37,7 @@ def scan_path(path, w, feature_indexes):
         print(filename)
         if os.path.isfile(filename):
             scan(filename , w, feature_indexes)
-        else:
-            print("~~ Not a file\n")
-
+       
 
 def scan(filename ,w, feature_indexes):
     features = []
