@@ -2,7 +2,7 @@
 ## Use Ai to find malwares on your system
 
 <p align="center">
-<img src="Imgs/ai.png" width="120">
+<img src="Imgs/ai.png" width="160">
 </p>
 
 ## Notes
