@@ -73,13 +73,10 @@ def predict_file(x, indexes, w):
     x=np.array(x,dtype=float)
     preditctions = cost_functions.predict_log_reg(x,x,w, config["classify_threshold"])
     y_pred = [pred[0] for pred in preditctions]
-    get_classify_result(y_pred)
+    return get_classify_result(y_pred)
 
 
 def get_classify_result(prediction):
-    print("-----------------------------")
-    if(prediction[0] == 0):
-        print("No malware was found")
-    else:
-        print("Possible identified malware")
-    print("-----------------------------")
+    if(prediction[0] == 1):
+        return 1
+    return 0

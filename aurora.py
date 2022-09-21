@@ -34,9 +34,10 @@ def init():
 
 def scan_path(path, w, feature_indexes):
     for filename in glob.iglob(path + "**", recursive=True):
-        print(filename)
         if os.path.isfile(filename):
-            scan(filename , w, feature_indexes)
+            if scan(filename , w, feature_indexes):
+                print("Possible identified malware:\n" + filename)
+
        
 
 def scan(filename ,w, feature_indexes):
@@ -56,6 +57,6 @@ def scan(filename ,w, feature_indexes):
                 for f in func_list:
                     if f in features:
                         file_features[features.index(f)] = 1  
-                predict_file(file_features, feature_indexes, w)
+                return predict_file(file_features, feature_indexes, w)
 
 init()
