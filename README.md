@@ -16,6 +16,6 @@
 
 ## Demo screenshot 
 <p align="center">
-<img src="Imgs/aurora-demo.png" width="900">
+<img src="Imgs/aurora-demo.png" width="800">
 </p>
 
