@@ -6,7 +6,7 @@
 </p>
 
 ## Notes
-- Let Aurora learn the characteristics of malwares by using ligistic regression
+- Let Aurora learn the characteristics of malwares by using logistic regression
 - Aurora will do its computation based on data taken from ~47,000 legitimate and non-legitimate files.
 - After it has finished you may let it scan a path (or a specific file).
 - Aurora will go over all the files in the chosen path and alert if it thinks there is a possible malware.
